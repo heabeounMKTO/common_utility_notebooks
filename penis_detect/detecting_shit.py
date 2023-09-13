@@ -25,11 +25,11 @@ class ClassifyShit:
         else: 
             return False
         
-    def detect_from_model(self, model, device, conf):
+    def detect_from_model(self, model, device, conf, sz):
         model = DetectMultiBackend(
             weights=model, device=device, dnn=False, data=None, fp16=True
         )
         detect_image = imageDetect(source=self.image, device=device, model=model, conf=conf)
-        results = detect_image.detect()
+        results = detect_image.detect(imgsz=sz)
         return results 
         
