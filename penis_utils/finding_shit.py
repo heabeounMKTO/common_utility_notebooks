@@ -35,6 +35,16 @@ class FilesFinder:
 class LabelsLoader:
     def __init__(self, json_array):
         self.json_array = json_array
+    def get_img_with_label(self, label):
+        '''
+        will add **kwargs later.
+        '''
+        img_w_label = []
+        for file in self.json_array:
+            for shit in json.load(open(file))['shapes']:
+                if shit['label'] == label:
+                    img_w_label.append(file)
+        return img_w_label, label
         
     def load_all_classes_from_array(self, to_dict=False):
         '''
