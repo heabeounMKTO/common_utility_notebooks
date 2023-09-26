@@ -36,6 +36,7 @@ class FilesFinder:
 class LabelsLoader:
     def __init__(self, json_array):
         self.json_array = json_array
+
     def load_all_classes_from_array(self, to_dict=False):
         """
         loads all classes from json array
