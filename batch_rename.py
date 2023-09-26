@@ -5,10 +5,8 @@ from pprint import pprint
 from pathlib import Path
 
 def batch_rename():
-    
     folder_path, extension, new_name = opt.path, opt.ext, opt.newname
     all_files = fs.FilesFinder(folder_path).by_extension(tuple(extension))
-    pprint(all_files)
     for idx, file in enumerate(all_files):
         splitf = os.path.splitext(file)
         renamed = folder_path + f"{new_name}_{idx}" + splitf[1]
