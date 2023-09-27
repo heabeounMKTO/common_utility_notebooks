@@ -13,7 +13,6 @@ def batch_rename():
         renamed = folder_path + f"{new_name}_{idx}" + splitf[1]
         os.rename(file, renamed)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--path", type=str, required=True, help="folder path")
